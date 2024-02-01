@@ -1,0 +1,9 @@
+{
+    "nombre": "Sofia",
+    "email": "email@gmail.com",
+    "productos": [
+        {"nombre": "taza"},
+        {"nombre": "plato"},
+        {"nombre": "olla"}
+    ]
+}
