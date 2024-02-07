@@ -80,40 +80,48 @@ const productoInicio = [
         {id: 2, nombre: 'Tazas', categoria: 'Cocina', precio: 15000, img: './media/img-taza3.jpg'},
         {id: 3, nombre: 'Mates', categoria: 'Cocina', precio: 10000, img: './media/img-mate3.jpg'},
         {id: 4, nombre: 'Bowls', categoria: 'Cocina', precio: 20000, img: './media/img-bowl3.jpg'},
-        {id: 5, nombre: 'Escultura', categoria: 'Hogar', precio: 35000, img: './media/img-escultura.jpg'},
+        {id: 5, nombre: 'Escultura', categoria: 'Hogar', precio: 35000, img: './media/img-escultura.jpg'}
     ];
     
-for (let i=0; i<productoInicio.length; i++){
+const renderProducts = (list) => {
+    contenedor.innerHTML = '';
     
-    let elemento = productoInicio[i];
-    console.log(elemento);
-
+    list.forEach (product => {
     contenedor.innerHTML += //HTML
     `<div class="card">
     <div class="card-image">
-    <img src="${elemento.img}" class="imagen-card">
+    <img src="${product.img}" class="imagen-card">
     </div>
     <div class="card-body">
-        <h4>${elemento.nombre}</h4>
-        <i class='bx bx-cart bx-md' id='iconoCard'></i>
-        <p class="texto-card">$${elemento.precio}</p>
-     </div>`;
-}
-
-//Agrega al carrito
-iconoAdd = document.querySelectorAll ('#iconoCard');
-
-iconoAdd.forEach (iconoCard => {
-    iconoCard.addEventListener ('click', (evento)=> {
-        console.log (evento.target);
-        const id = evento.target.id;
-        addCarrito (id);
+        <h4>${product.nombre}</h4>
+        <button id="${product.id} " type="button" class="btnAdd">
+        <i class="fa-solid fa-cart-plus"></i>
+    </button>
+        <p class="texto-card">$${product.precio}</p>
+        </div>`;
     })
-});
 
-function addCarrito (id){
-    console.log ('Add');
-}
+    
+ //Agrega un elemento al carrito
+    const btns = document.querySelectorAll ('.btnAdd');
+
+    btns.forEach(btn => {
+    btn.addEventListener ('click', addToCart);
+    });
+    }
+
+    const addToCart = (e) =>{
+        const id = e.target.id;
+
+     const product = productoInicio.find (item => item.id == id);
+        console.table (product);
+
+        cart.addToCart(product);
+        cartCount.innerText = cart.getCount ();
+    }
+
+    renderProducts (productoInicio)
+
 
 //Prueba archivo JSON
 const persona ={
@@ -130,57 +138,4 @@ const datoString = localStorage.getItem ('persona');
 const Objeto = JSON.parse(datoString);
 
 console.log(Objeto);
-
-//Buscar una categoría en el carrito
-// productoInicio.forEach ((item) => {
-//     console.log (item.nombre.toUpperCase())
-// });
-
-// let buscar = prompt ('Busca tu categoría de productos');
-
-// const encontrados = productoInicio.find ((item) => item.categoria.toLowerCase() === buscar.toLowerCase());
-
-// if (encontrados){
-//     alert ('Se encontró la siguiente categoría: ' + encontrados.categoria)
-// }
-// else {
-//     alert ('Esa categoría no existe ' + buscar)
-// } 
-
-//Busqueda por nombres en el carrito
-// class Objeto {
-//     constructor (productoInicio){
-//         this.productoInicio = productoInicio;
-//     }
-
-//     getProductbyName (nombre){
-//         const name = this.productoInicio.filter (item => item.nombre.toLowerCase().includes (nombre.toLowerCase()));
-//         return name;
-//     } 
-// }
-
-// const libro = new Objeto (productoInicio);
-// const elementos = libro.getProductbyName('t');
-
-// console.table(elementos);
-
-
-// // //Agrega un elemento al carrito
-// // while (confirm ('¿Deseas agregar otro producto al carrito?')){
-// //     producto = prompt ('Indica tu producto');
-// //     productoInicio.push (producto);
-// // }
-
-// // for (let i=0; i<productoInicio.length; i++){
-// //     console.log (carrito [i]);
-// // }
-
-// //Quita un elemento del carrito
-// while (confirm ('¿Deseas quitar un elemento del carrito?')){
-
-//     producto = prompt ('Indica el producto que deseas quitar');
-//     productoInicio.splice (3,1);
-//     console.table (productoInicio);
-// }
-
 

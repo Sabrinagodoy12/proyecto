@@ -20,10 +20,10 @@ h2{
     margin-left: 5rem;
 }
 h4{
-    text-align: justify;
-    margin-left: 0.5rem;
     font-size: 1.5rem;
-    margin-top: 0;
+    margin-top: -0.5rem;
+    color: #A6493F;
+    font-weight: 700;
 }
 
 a{
@@ -32,6 +32,7 @@ a{
 }
 
 /* Sección del navegador */
+
 nav{
     width: 100%;
     height: 3rem;
@@ -39,24 +40,35 @@ nav{
     position: sticky;
     top: 0;
 }
-#iconoNav{
-    margin-top: 1rem;
-    margin-right: -90rem;
-    margin-left: 2rem;
-}
-.link{
-   padding: 1rem;
-   font-size: 1.5rem;
-}
 .nav-link{
     font-size: 1.5rem;
     margin: 1rem;
 }
 
-.buscador{
-    border-color: #A6493F;
-
+.link{
+   padding: 1rem;
+   font-size: 1.5rem;
 }
+
+#btnModalCarrito{
+    width: 100px;
+    height: 40px;
+    margin-top: 1.3rem;
+}
+
+.d-flex{
+    margin-left: 30rem;
+}
+.btn-outline-success{
+    height: 2rem;
+    width: 10rem;
+    font-size: 1rem;
+    color: #EBE5DC;
+    background-color: #A6493F;
+    border-radius: 1rem ;
+    text-align: center;
+}
+
 /*Sección para pedir el nombre*/
 input{
     height: 2rem;
@@ -69,6 +81,11 @@ input{
     height: 2rem;
     width: 7rem;
     font-size: 1rem;
+    margin-top: -1rem;
+}
+
+#btn{
+    margin-left: 7rem;
 }
 
 .advertencia{
@@ -78,6 +95,7 @@ input{
     font-family:'Times New Roman', Times, serif;
     margin-top: 0;
 }
+
 
 /* Sección de la portada */
 .portada{
@@ -110,12 +128,19 @@ input{
     grid-area: descripcion;
     grid-column-start: 4;
     margin-left: 63%;
-    margin-top: 5rem;
+    margin-top: 6rem;
     text-align: justify;
     font-size: 1.2rem;
 }
 
+/*Modal*/
+
+
 /* Sección de las cards */
+#btnOrder{
+    margin-left: 2rem;
+    width: 100px;
+}
 .tituloProductos{
     margin-top: 3rem;
 }
@@ -123,30 +148,26 @@ input{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 80%;
-    margin: 3rem;
- 
 }
  .card{
   border: 1px solid #A6493F;
   border-radius: 5px;
-  height: 23.5rem;
-  margin: 1rem;
+  height: 26rem;
+  margin: 2rem;
   background-color: #F6F3EF;
 } 
 
 .imagen-card{
-    width: 13rem;
-    height: 18rem;
+    width: 15rem;
+    height: 20rem;
 }
 
 .texto-card{
-    margin-left: 1rem;
-    margin-top: -1.5rem;
+    margin-top: -2rem;
     text-align:start;
     font-size: 1.2rem;
     font-weight: 600;
+    color: #A6493F;
 }
 
 .bx{
@@ -178,4 +199,13 @@ button{
     border-radius: 1rem ;
     margin-left: 50%;
     text-align: center;
+}
+
+.btnAdd{
+    background-color: #EBE5DC;
+    color: #A6493F;
+    margin-top: 0.7rem;
+    height: 2rem;
+    width: 5rem;
+    margin-left: 8rem;
 }
