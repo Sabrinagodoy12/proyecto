@@ -7,12 +7,13 @@ const texto = document.querySelector ('p');
 const contenedor = document.querySelector ('#card-productos');
 const buscador = document.querySelector ('#inputSearch');
 const modal = document.querySelector ('#exampleModal')
+const modalListProduct = document.querySelector ('#modalListProducts');
 const btnModalCarrito = document.querySelector ('#btnModalCarrito');
 const cartCount = document.querySelector ('#cartCount');
+const cartSum = document.querySelector ('#cartSum');
 const btnOrder = document.querySelector ('#btnOrder');
 
-// const cart = new Cart ();
-// cartCount.innerText = cart.getCount ();
+const listCart = JSON.parse (localStorage.getItem ('cart')) || [];
 
 
 //todos los productos
@@ -62,11 +63,32 @@ const addToCart = (e) =>{
     console.table (product);
 
     cart.addToCart (product);
+    cartCount.innerText = cart.getCount();
 
+    btnModalCarrito.addEventListener ('click', function (){
+      const list = cart.getProducts();
+      renderCart (list);
+
+      cartSum.innerText = cart.getSum ();
+      // modal.show ();
+    })
+}
+
+const renderCart = (list) => {
+  modalListProduct.innerHTML = '';
+  list.forEach (element => {
+    modalListProduct.innerHTML += //HTML
+    `  <tr>
+    <td> ${element.nombre} </td>
+    <td> ${element.stock} </td>
+    <td> $${element.precio}</td>
+    <td> $${element.precio * element.stock}</td>
+
+  </tr>`
+  })
 }
 
 renderProducts (todosProductos)
-
 
 //Buscador de productos
 buscador.addEventListener ('input', (event)=> {

@@ -11,7 +11,7 @@
     <!--Hoja de estilos-->
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>Pre-Entrega3</title>
+    <title>Entrega final- Productos</title>
 </head>
 <header>
     <nav>
@@ -59,11 +59,25 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p></p>
+        <table class="table table-hover">
+          <thead>
+              <tr>
+                  <th>Producto</th>
+                  <th>Cantidad</th>
+                  <th>Precio</th>
+                  <th>Total</th>
+              </tr>
+          </thead>
+          <tbody id="modalListProducts">
+          
+          </tbody>
+      </table>
+      <hr>
+      <p class="text-danger"> Total final: $ <span id="cartSum"></span></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary">Comprar</button>
       </div>
     </div>
   </div>

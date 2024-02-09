@@ -80,7 +80,6 @@ const productoInicio = [
         {id: 2, nombre: 'Tazas', categoria: 'Cocina', precio: 15000, img: './media/img-taza3.jpg'},
         {id: 3, nombre: 'Mates', categoria: 'Cocina', precio: 10000, img: './media/img-mate3.jpg'},
         {id: 4, nombre: 'Bowls', categoria: 'Cocina', precio: 20000, img: './media/img-bowl3.jpg'},
-        {id: 5, nombre: 'Escultura', categoria: 'Hogar', precio: 35000, img: './media/img-escultura.jpg'}
     ];
     
 const renderProducts = (list) => {
