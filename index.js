@@ -19,6 +19,12 @@ const nombre = localStorage.getItem ('name');
 
 btn.onclick = ( ) => {
     login();
+      
+    Swal.fire({
+        title: "Registrado",
+        text: "Ya colocaste tu nombre",
+        icon: "success"
+      });
 }
 
 function login(){
@@ -41,6 +47,7 @@ inputNombre.addEventListener('blur', ()=>{
     const usuario = inputNombre.value.trim();
 
     (usuario.length > 20) ? p.innerText = 'El nombre de usuario es demasiado largo' : p.innerText = '';
+  
 })
 
 btn2.addEventListener('click', ()=>{
@@ -90,9 +97,9 @@ const renderProducts = (list) => {
         <h4>${product.nombre}</h4>
         <button id="${product.id} " type="button" class="btnAdd">
         <i class="fa-solid fa-cart-plus"></i>
-    </button>
+        </button>
         <p class="texto-card">$${product.precio}</p>
-        </div>`;
+    </div>`;
     })
 
     

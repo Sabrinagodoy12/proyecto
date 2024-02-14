@@ -68,6 +68,15 @@ const addToCart = (e) =>{
     cart.addToCart (product);
     cartCount.innerText = cart.getCount();
 
+    Toastify({
+
+      text: "Producto agregado al carrito",
+      duration: 3000,
+      style: {
+        background: "#A6493F"
+      }
+      }).showToast();
+
     btnModalCarrito.addEventListener ('click', function (){
       const list = cart.getProducts();
       renderCart (list);
@@ -78,6 +87,7 @@ const addToCart = (e) =>{
 
 const renderCart = (list) => {
   modalListProduct.innerHTML = '';
+
   list.forEach (element => {
     modalListProduct.innerHTML += //HTML
     `  <tr>
