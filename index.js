@@ -9,17 +9,13 @@ const inputNombre = document.querySelector('#nombre');
 const btn = document.querySelector ('#btn');
 const p = document.querySelector ('.advertencia')
 const btn2 = document.querySelector ('#btn2');
-let iconoCard ;
 
+let iconoCard ;
 
 //Solicita el nombre al usuario para darle la bienvenida + cantidad de caracteres que debe poner
 const nombre = localStorage.getItem ('name');
-if (nombre){
-    titulo.innerText = `Bienvenido/a ${nombre}`;
-}
-else{
-    titulo.innerText = `Bienvenido/a`;
-}
+
+(nombre) ? titulo.innerText = `Bienvenido/a ${nombre}` :  titulo.innerText = `Bienvenido/a`;
 
 btn.onclick = ( ) => {
     login();
@@ -28,12 +24,14 @@ btn.onclick = ( ) => {
 function login(){
     let nombre = inputNombre.value;
 
-    if (nombre != ''){
-        titulo.innerText = `Bienvenido/a ${nombre}`
-    }
-    else{
-        p.innerText = 'Complete el nombre de usuario';
-    }
+    (nombre != '') ? titulo.innerText = `Bienvenido/a ${nombre}` : p.innerText = 'Complete el nombre de usuario';
+ 
+    // if (nombre != ''){
+    //     titulo.innerText = `Bienvenido/a ${nombre}`
+    // }
+    // else{
+    //     p.innerText = 'Complete el nombre de usuario';
+    // }
 
     console.log(nombre);
     localStorage.setItem('name', nombre)
@@ -42,12 +40,7 @@ function login(){
 inputNombre.addEventListener('blur', ()=>{
     const usuario = inputNombre.value.trim();
 
-    if(usuario.length > 20){
-        p.innerText = 'El nombre de usuario es demasiado largo';
-    }
-    else{
-        p.innerText = '';
-    }
+    (usuario.length > 20) ? p.innerText = 'El nombre de usuario es demasiado largo' : p.innerText = '';
 })
 
 btn2.addEventListener('click', ()=>{
@@ -86,7 +79,9 @@ const renderProducts = (list) => {
     contenedor.innerHTML = '';
     
     list.forEach (product => {
+
     contenedor.innerHTML += //HTML
+
     `<div class="card">
     <div class="card-image">
     <img src="${product.img}" class="imagen-card">

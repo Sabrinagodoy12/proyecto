@@ -197,8 +197,10 @@ button{
     color: #EBE5DC;
     background-color: #A6493F;
     border-radius: 1rem ;
+    margin: 3rem;
     margin-left: 50%;
     text-align: center;
+ 
 }
 
 .btnAdd{
@@ -208,4 +210,11 @@ button{
     height: 2rem;
     width: 5rem;
     margin-left: 8rem;
+}
+
+/*Sección footer*/
+footer{
+    background-color: #A6493F;
+    height: 5rem;
+    width: 100%;
 }

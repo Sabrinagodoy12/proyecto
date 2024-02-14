@@ -7,11 +7,9 @@ class Cart {
     addToCart ({id, nombre, precio, img}){
         const index = this.cart.findIndex (product => product.id == id);
         if (index == -1){
-            console.log ('Ese producto no se encuentra en el carrito');
             this.cart.push ({id, nombre, precio, stock: 1});
         }
         else {
-            console.log ('Aumenta la cantidad del producto que ya está en el carrito');
         this.cart [index].stock += 1;
         }
 

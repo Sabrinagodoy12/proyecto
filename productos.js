@@ -13,10 +13,11 @@ const cartCount = document.querySelector ('#cartCount');
 const cartSum = document.querySelector ('#cartSum');
 const btnOrder = document.querySelector ('#btnOrder');
 
-const listCart = JSON.parse (localStorage.getItem ('cart')) || [];
+const data = JSON.parse (localStorage.getItem ('cart'));
+const listCart = data ? data : [];
 
 
-//todos los productos
+//Todos los productos
 const todosProductos = [
     {id: 1, nombre: 'Plato con borde', categoria: 'Cocina', precio: 25000, img: './media/img-plato7.jpg'},
     {id: 2, nombre: 'Taza con dibujo', categoria: 'Cocina', precio: 15000, img: './media/img-taza3.jpg'},
@@ -33,7 +34,9 @@ const renderProducts = (list) => {
     contenedor.innerHTML = '';
 
   list.forEach (product => {
+
     contenedor.innerHTML += //HTML
+
     `<div class="card">
     <div class="card-image">
     <img src="${product.img}" class="imagen-card">
@@ -70,7 +73,6 @@ const addToCart = (e) =>{
       renderCart (list);
 
       cartSum.innerText = cart.getSum ();
-      // modal.show ();
     })
 }
 
@@ -83,7 +85,6 @@ const renderCart = (list) => {
     <td> ${element.stock} </td>
     <td> $${element.precio}</td>
     <td> $${element.precio * element.stock}</td>
-
   </tr>`
   })
 }
