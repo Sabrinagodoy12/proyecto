@@ -1,7 +1,6 @@
 class Cart {
     constructor (list = []){
         this.cart = list;
-        console.log ('Hola Constructor')
     }
 
     addToCart ({id, nombre, precio, img}){

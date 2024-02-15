@@ -6,6 +6,7 @@ const subtitulo = document.querySelector ('.subtitulo');
 const texto = document.querySelector ('p');
 const contenedor = document.querySelector ('#card-productos');
 const buscador = document.querySelector ('#inputSearch');
+const btnBuscador = document.querySelector ('#btnBuscador');
 const modal = document.querySelector ('#exampleModal')
 const modalListProduct = document.querySelector ('#modalListProducts');
 const btnModalCarrito = document.querySelector ('#btnModalCarrito');
@@ -15,7 +16,6 @@ const btnOrder = document.querySelector ('#btnOrder');
 
 const data = JSON.parse (localStorage.getItem ('cart'));
 const listCart = data ? data : [];
-
 
 //Todos los productos
 const todosProductos = [
@@ -125,4 +125,13 @@ btnOrder.addEventListener ('click', () => {
 
     renderProducts(todosProductos);
     btnOrder.setAttribute('disabled', true)
+})
+
+
+btnOrder.addEventListener ('click', () => {
+  console.log ('Ordenando los productos');
+
+  setTimeout ( ()=> {
+      console.log ('Los productos han sido ordenados')
+  }, 500);
 })

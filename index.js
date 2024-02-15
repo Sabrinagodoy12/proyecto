@@ -12,6 +12,7 @@ const btn2 = document.querySelector ('#btn2');
 
 let iconoCard ;
 
+
 //Solicita el nombre al usuario para darle la bienvenida + cantidad de caracteres que debe poner
 const nombre = localStorage.getItem ('name');
 
