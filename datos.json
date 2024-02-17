@@ -1,7 +1,7 @@
 {
     "data" : [
         {"id": 9, "nombre": "Plato hoja", "categoria": "Cocina", "precio": 25000, "img": "./media/img-plato4.jpg"},
-        {"id": 10, "nombre": "Plato blanco", "categoria": "Cocina", "precio": 25000, "img": "./media/img-plato6.jpg"},
+        {"id": 10, "nombre": "Plato con puntos", "categoria": "Cocina", "precio": 25000, "img": "./media/img-plato6.jpg"},
         {"id": 11, "nombre": "Taza con rosas", "categoria": "Cocina", "precio": 15000, "img": "./media/img-taza1.jpg"},
         {"id": 12, "nombre": "Taza diseñada", "categoria": "Cocina", "precio": 15000, "img": "./media/img-taza4.jpg"},
         {"id": 13, "nombre": "Mate manchas", "categoria": "Cocina", "precio": 10000, "img": "./media/img-mate.jpg"},
