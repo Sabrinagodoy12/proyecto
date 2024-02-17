@@ -14,8 +14,30 @@ const cartCount = document.querySelector ('#cartCount');
 const cartSum = document.querySelector ('#cartSum');
 const btnOrder = document.querySelector ('#btnOrder');
 
+const btnVerTodos = document.querySelector ('#btnVerTodos');
+const masProductos = document.querySelector ('#masProductos');
+
 const data = JSON.parse (localStorage.getItem ('cart'));
 const listCart = data ? data : [];
+
+//Cargan más productos
+const renderizarProductos = (data) => {
+  masProductos.innerHTML = '';
+  data.forEach(product => {
+      masProductos.innerHTML += // html
+                        `<div class="card" id="row">
+                        <div class="card-image">
+                        <img src="${product.img}" class="imagen-card">
+                        </div>
+                        <div class="card-body">
+                            <h4>${product.nombre}</h4>
+                            <button id="${product.id} " type="button" class="btnAdd">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                          <p class="texto-card">$${product.precio}</p>
+                            </div>`;
+  });
+}
 
 //Todos los productos
 const todosProductos = [
@@ -36,20 +58,18 @@ const renderProducts = (list) => {
   list.forEach (product => {
 
     contenedor.innerHTML += //HTML
-
-    `<div class="card">
-    <div class="card-image">
-    <img src="${product.img}" class="imagen-card">
-    </div>
-    <div class="card-body">
-        <h4>${product.nombre}</h4>
-        <button id="${product.id} " type="button" class="btnAdd">
-        <i class="fa-solid fa-cart-plus"></i>
-    </button>
-       <p class="texto-card">$${product.precio}</p>
-        </div>`;
+                    `<div class="card">
+                    <div class="card-image">
+                    <img src="${product.img}" class="imagen-card">
+                    </div>
+                    <div class="card-body">
+                        <h4>${product.nombre}</h4>
+                        <button id="${product.id} " type="button" class="btnAdd">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                      <p class="texto-card">$${product.precio}</p>
+                        </div>`;
   })
-
 
 //Agrega un elemento al carrito
   const btns = document.querySelectorAll ('.btnAdd');
@@ -124,9 +144,15 @@ btnOrder.addEventListener ('click', () => {
     })
 
     renderProducts(todosProductos);
-    btnOrder.setAttribute('disabled', true)
-})
+    // btnOrder.setAttribute('disabled', true)
 
+ //Ejemplo de Fetch a un servidor
+    const endPoint = 'https://jsonplaceholder.typicode.com/comments';
+    fetch (endPoint).then (respose => respose.json())
+    .then (respJSON => {
+      console.log (respJSON);
+    });
+})
 
 btnOrder.addEventListener ('click', () => {
   console.log ('Ordenando los productos');
@@ -135,3 +161,25 @@ btnOrder.addEventListener ('click', () => {
       console.log ('Los productos han sido ordenados')
   }, 500);
 })
+
+//Fetch local
+btnVerTodos.addEventListener ('click', ()=> {
+  console.log ('click');
+
+const endPoint = 'datos.json';
+
+ fetch(endPoint).then (respose => respose.json())
+ .then (resp => {
+    const data = resp.data;
+    console.log (data);
+    renderizarProductos (data);
+
+  }).catch (error => {
+    Swal.fire({
+      title: "Upss...",
+      text: 'ha ocurrido un error. Intentelo más tarde',
+      icon: 'error',
+      confirmButtonText: 'Aceptar'
+  });
+})
+  });

@@ -1,9 +1,22 @@
 {
-    "nombre": "Sofia",
-    "email": "email@gmail.com",
-    "productos": [
-        {"nombre": "taza"},
-        {"nombre": "plato"},
-        {"nombre": "olla"}
+    "data" : [
+        {"id": 9, "nombre": "Plato hoja", "categoria": "Cocina", "precio": 25000, "img": "./media/img-plato4.jpg"},
+        {"id": 10, "nombre": "Plato blanco", "categoria": "Cocina", "precio": 25000, "img": "./media/img-plato6.jpg"},
+        {"id": 11, "nombre": "Taza con rosas", "categoria": "Cocina", "precio": 15000, "img": "./media/img-taza1.jpg"},
+        {"id": 12, "nombre": "Taza diseñada", "categoria": "Cocina", "precio": 15000, "img": "./media/img-taza4.jpg"},
+        {"id": 13, "nombre": "Mate manchas", "categoria": "Cocina", "precio": 10000, "img": "./media/img-mate.jpg"},
+        {"id": 14, "nombre": "Mate Argentina", "categoria": "Cocina", "precio": 10000, "img": "./media/img-mate4.jpg"},
+        {"id": 15, "nombre": "Bowl hoja", "categoria": "Cocina", "precio": 20000, "img": "./media/img-bowl.jpg"},
+        {"id": 16, "nombre": "Bowl flores", "categoria": "Cocina", "precio": 20000, "img": "./media/img-bowl4.jpg"},
+        {"id": 17, "nombre": "Buda chico", "categoria": "Hogar", "precio": 25000, "img": "./media/img-escultura2.jpg"},
+        {"id": 18, "nombre": "Buda grande", "categoria": "Hogar", "precio": 50000, "img": "./media/img-escultura5.jpg"},
+        {"id": 19, "nombre": "Maceta futurista", "categoria": "Jardín", "precio": 30000, "img": "./media/img-maceta3.jpg"},
+        {"id": 19, "nombre": "Maceta textura", "categoria": "Jardín", "precio": 30000, "img": "./media/img-maceta5.jpg"},
+        {"id": 20, "nombre": "Soporte nubes", "categoria": "Hogar", "precio": 10000, "img": "./media/img-vela.jpg"},
+        {"id": 21, "nombre": "Soporte mano", "categoria": "Hogar", "precio": 10000, "img": "./media/img-vela4.jpg"},
+        {"id": 22, "nombre": "Bowl blanco", "categoria": "Cocina", "precio": 20000, "img": "./media/img-bowl3.jpg"},
+        {"id": 23, "nombre": "Florero", "categoria": "Hogar", "precio": 20000, "img": "./media/img-maceta.jpg"},
+        {"id": 11, "nombre": "Taza gatito", "categoria": "Cocina", "precio": 15000, "img": "./media/img-taza2.jpg"},
+        {"id": 24, "nombre": "Plato hoja rosa", "categoria": "Cocina", "precio": 25000, "img": "./media/img-plato3.jpg"}
     ]
 }
