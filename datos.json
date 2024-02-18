@@ -16,7 +16,7 @@
         {"id": 21, "nombre": "Soporte mano", "categoria": "Hogar", "precio": 10000, "img": "./media/img-vela4.jpg"},
         {"id": 22, "nombre": "Bowl blanco", "categoria": "Cocina", "precio": 20000, "img": "./media/img-bowl3.jpg"},
         {"id": 23, "nombre": "Florero", "categoria": "Hogar", "precio": 20000, "img": "./media/img-maceta.jpg"},
-        {"id": 11, "nombre": "Taza gatito", "categoria": "Cocina", "precio": 15000, "img": "./media/img-taza2.jpg"},
-        {"id": 24, "nombre": "Plato hoja rosa", "categoria": "Cocina", "precio": 25000, "img": "./media/img-plato3.jpg"}
+        {"id": 24, "nombre": "Taza gatito", "categoria": "Cocina", "precio": 15000, "img": "./media/img-taza2.jpg"},
+        {"id": 25, "nombre": "Plato hoja rosa", "categoria": "Cocina", "precio": 25000, "img": "./media/img-plato3.jpg"}
     ]
 }
