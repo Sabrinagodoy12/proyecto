@@ -33,13 +33,6 @@ function login(){
 
     (nombre != '') ? titulo.innerText = `Bienvenido/a ${nombre}` : p.innerText = 'Complete el nombre de usuario';
  
-    // if (nombre != ''){
-    //     titulo.innerText = `Bienvenido/a ${nombre}`
-    // }
-    // else{
-    //     p.innerText = 'Complete el nombre de usuario';
-    // }
-
     console.log(nombre);
     localStorage.setItem('name', nombre)
 }
@@ -123,21 +116,4 @@ const renderProducts = (list) => {
     }
 
     renderProducts (productoInicio)
-
-
-//Prueba archivo JSON
-const persona ={
-    nombre: 'Sofia',
-    email: 'email@gmail.com'
-}
-const text = JSON.stringify(persona)
-console.log(persona);
-console.log(text);
-
-localStorage.setItem ('persona', text);
-
-const datoString = localStorage.getItem ('persona');
-const Objeto = JSON.parse(datoString);
-
-console.log(Objeto);
 
